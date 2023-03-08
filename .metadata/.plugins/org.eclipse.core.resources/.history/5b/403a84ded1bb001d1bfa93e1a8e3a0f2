@@ -1,0 +1,25 @@
+package com.example.Board;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.example.Board.service.BoardService;
+
+@SpringBootTest
+class BoardApplicationTests {
+
+	@Autowired
+	private BoardService boardService;
+	
+	@Test
+	void contextLoads() {
+		for(int i=1; i<=300; i++) {
+			String title = "테스트용 제목 " + i;
+			String content = "테스트용 내용 " + i;
+			
+//			boardService.write(null, null);
+	}
+
+}
+}

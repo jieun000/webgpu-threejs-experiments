@@ -1,0 +1,37 @@
+<html layout:decorate="~{layout}">
+
+<div layout:fragment="content" class="container my-3">
+	
+	<div class="container row" style="background-color: rgba(209, 209, 209, 0.774); margin: auto; border-radius: 30px; margin-top: 60px;">
+		<div class="col-4 pt-5">
+			<img class="img-fluid" th:src="@{${board.filepath}}">
+		</div>
+		
+		<div class="container col-8">
+      <form th:action="@{/board/update/{id}(id = ${board.id})}" method="post">
+        <input style="margin: 20px;" th:value="${board.title}"></input>
+        <div> 
+          <div>개봉일</div>
+          <textarea class="form-control" rows="1" th:value="${board.title}"></textarea>
+          <div>감독</div>
+          <textarea class="form-control" rows="1" th:value="${board.title}"></textarea>
+          <div>배우</div>
+          <textarea class="form-control" rows="1" th:value="${board.id}"></textarea>
+          <div>줄거리</div>
+          <textarea class="form-control" rows="5" name="synopsis" th:text="${board.content}"></textarea>
+    
+          <input type="file" name="file">
+          <div class="py-3">
+            <a class="btn btn-primary" type="submit">글 수정</a>
+          </div>
+        </div>
+    </form>
+		</div>
+
+
+
+	</div>
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</div>
+</html>

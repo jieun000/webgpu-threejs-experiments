@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title> 
+</head>
+<body onload="javascript:window_onload()" style="background: url(/image/movie.jpg) ; background-size: 100%;">
+	<script language="javascript">
+		function window_onload(){
+		setTimeout('go_url()',3000) 
+		}
+		function go_url(){
+		location.href="/board/list" 
+		}
+		// 3초 로드
+		setTimeout(function(){
+		location.load();
+		},3000); // 3000밀리초 = 3초
+		 
+		// 카운트 다운
+		let time = 3;
+		const interval = setInterval(function() {
+		    time--;
+		    if (time === 2) document.getElementById("timer").innerHTML = "2";
+		    if (time === 1) document.getElementById("timer").innerHTML = "1";
+		    if (time === 0) clearInterval(interval);
+		}, 1000);
+  </script>
+	
+	 <span class="badge bg-primary rounded-pill" style="color: wheat; font-size: 100px;" id="timer">3</span>
+	
+</body>
+</html>

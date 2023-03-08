@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title> 
+</head>
+<body onload="javascript:window_onload()">
+	<script language="javascript">
+      function window_onload(){
+		 setTimeout('go_url()',5000) 
+      }
+      function go_url(){
+         location.href="/board/list" 
+      }
+  </script>
+	
+	<img src="/image/movie.jpg" width="100%" style="z-index: ;">
+	
+	<div class="alert">
+        <span class="time" style="color: white;">5</span>초 뒤에 사라지는 알림창
+    </div>
+	
+<script>
+	setTimeout(function() {
+		document.querySelector('.alert').style.display = 'none';
+	}, 5000);
+</script>
+</body>
+</html>

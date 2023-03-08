@@ -1,0 +1,9 @@
+package com.example.Board;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository											// 엔티티, 기본 키
+public interface BoardRepository extends JpaRepository<Board, Integer> {
+
+}

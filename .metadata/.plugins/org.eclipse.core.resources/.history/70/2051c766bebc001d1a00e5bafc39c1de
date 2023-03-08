@@ -1,0 +1,35 @@
+<html layout:decorate="~{layout}">
+
+<div layout:fragment="content" class="container my-3">
+	
+	<div class="container row" style="background-color: rgba(209, 209, 209, 0.774); margin: auto; border-radius: 30px; margin-top: 60px;">
+		<div class="col-4 py-5">
+			<img class="img-fluid" th:src="@{${board.filepath}}">
+		</div>
+		
+		<div class="container col-8">
+			<h3 style="margin-top: 65px; margin-bottom: 10px;" th:text="${board.title}"></h3>
+			<div> 
+				<div>감독</div>
+				<div class="form-control" rows="1" th:text="${board.director}"></div>
+				<div>배우</div>
+				<div class="form-control" rows="1" th:text="${board.actor}"></div>
+				<div>개봉일</div>
+				<div class="form-control" rows="1" th:text="${board.openDate}"></div>
+				<div>줄거리</div>
+				<textarea class="form-control" rows="8" name="synopsis" th:text="${board.content}"></textarea>
+	
+				<div class="py-3">
+					<a class="btn btn-primary" th:href="@{/board/modify/{id}(id = ${board.id})}">글 수정</a>
+					<a class="btn btn-primary" th:href="@{/board/delete(id=${board.id})}">글 삭제</a>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</div>
+</html>
